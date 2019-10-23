@@ -19,8 +19,9 @@ source:
   sha256: {{ src_checksum }}
 
 build:
-  number: 0
-  skip: True  # [not linux]
+  number: 2
+  skip: True  # [win]
+  skip: True  # [osx and py==27]
   rpaths:
     - lib/
 
