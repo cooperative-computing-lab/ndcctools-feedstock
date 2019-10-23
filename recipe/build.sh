@@ -3,10 +3,12 @@ DISABLED_SYS=$(echo --without-system-{allpairs,parrot,prune,sand,umbrella,wavefr
 DISABLED_LIB=$(echo --with-{readline,fuse}-path\ no)
 
 if [[ $PY3K == 1 ]]; then
-    ./configure --prefix "${PREFIX}" --with-base-dir "${PREFIX}" --with-python3-path "${PREFIX}" ${DISABLED_LIB} ${DISABLED_SYS}
+    PYTHON_OPT="--with-python3-path"
 else
-    ./configure --prefix "${PREFIX}" --with-base-dir "${PREFIX}" --with-python-path "${PREFIX}" ${DISABLED_LIB} ${DISABLED_SYS}
+    PYTHON_OPT="--with-python-path"
 fi
+
+./configure --prefix "${PREFIX}" --with-base-dir "${PREFIX}" ${PYTHON_OPT} "${PREFIX}" --with-perl-path "${PREFIX}" ${DISABLED_LIB} ${DISABLED_SYS}
 
 make -j${CPU_COUNT}
 make install
