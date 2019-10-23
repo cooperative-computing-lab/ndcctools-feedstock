@@ -172,4 +172,5 @@ Feedstock Maintainers
 =====================
 
 * [@btovar](https://github.com/btovar/)
+* [@dthain](https://github.com/dthain/)
 
