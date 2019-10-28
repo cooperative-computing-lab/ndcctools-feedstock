@@ -7,8 +7,8 @@
 # anaconda called cctools.
 
 {% set name = "ndcctools" %}
-{% set version = "7.0.19" %}
-{% set src_checksum = "14f1493dca1fb6ed5735faefda68b7d1d68bf932b77f2f2cdcb26ba05f968249" %}
+{% set version = "7.0.20" %}
+{% set src_checksum = "1fab9edab6f276832eda2ade63319355f0146001df830189e77750c382184ccd" %}
 
 package:
   name: {{ name|lower }}
@@ -19,7 +19,7 @@ source:
   sha256: {{ src_checksum }}
 
 build:
-  number: 1
+  number: 0
   skip: True  # [not linux]
   rpaths:
     - lib/
@@ -32,12 +32,16 @@ requirements:
     - make
   host:
     - python
+    - perl
     - zlib
   run:
     - python
+    - perl
     - zlib
 
 test:
+  imports:
+    - work_queue
   commands:
     - makeflow -h
     - work_queue_worker -h
