@@ -2,13 +2,20 @@
 DISABLED_SYS=$(echo --without-system-{allpairs,parrot,prune,sand,umbrella,wavefront,weaver})
 DISABLED_LIB=$(echo --with-{readline,fuse}-path\ no)
 
-if [[ $PY3K == 1 ]]; then
+
+if [[ "$PY3K" == 1 ]]; then
     PYTHON_OPT="--with-python3-path"
 else
     PYTHON_OPT="--with-python-path"
 fi
 
-./configure --prefix "${PREFIX}" --with-base-dir "${PREFIX}" ${PYTHON_OPT} "${PREFIX}" --with-perl-path "${PREFIX}" ${DISABLED_LIB} ${DISABLED_SYS}
+if [[ "$(uname)" == "Darwin" ]]; then
+    PERL_PATH="no"
+else
+    PERL_PATH="${PREFIX}"
+fi
+
+./configure --prefix "${PREFIX}" --with-base-dir "${PREFIX}" ${PYTHON_OPT} "${PREFIX}" --with-perl-path "${PERL_PATH}" ${DISABLED_LIB} ${DISABLED_SYS}
 
 make -j${CPU_COUNT}
 make install

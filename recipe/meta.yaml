@@ -33,11 +33,11 @@ requirements:
     - make
   host:
     - python
-    - perl
+    - perl  # [linux]
     - zlib
   run:
     - python
-    - perl
+    - perl  # [linux]
     - zlib
 
 test:
