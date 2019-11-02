@@ -19,7 +19,7 @@ source:
   sha256: {{ src_checksum }}
 
 build:
-  number: 3
+  number: 4
   skip: True  # [win]
   skip: True  # [osx and py==27]
   rpaths:
