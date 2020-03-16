@@ -1,12 +1,12 @@
 
-DISABLED_SYS=$(echo --without-system-{allpairs,parrot,prune,sand,umbrella,wavefront,weaver})
+DISABLED_SYS=$(echo --without-system-{parrot,prune,umbrella,weaver})
 DISABLED_LIB=$(echo --with-{readline,fuse}-path\ no)
 
 
 if [[ "$PY3K" == 1 ]]; then
     PYTHON_OPT="--with-python3-path"
 else
-    PYTHON_OPT="--with-python-path"
+    PYTHON_OPT="--with-python2-path"
 fi
 
 if [[ "$(uname)" == "Darwin" ]]; then

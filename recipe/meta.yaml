@@ -7,8 +7,8 @@
 # anaconda called cctools.
 
 {% set name = "ndcctools" %}
-{% set version = "7.0.22" %}
-{% set src_checksum = "543c240e8cf52a1f3045c84a0fa66c374e23ad1b39d7be933cac1f489349be93" %}
+{% set version = "7.1.0" %}
+{% set src_checksum = "84748245db10ff26c0c0a7b9fd3ec20fbbb849dd4aadc5e8531fd1671abe7a81" %}
 
 package:
   name: {{ name|lower }}
@@ -29,6 +29,7 @@ requirements:
   build:
     - {{ compiler('c') }}
     - {{ compiler('cxx') }}
+    - m4
     - swig
     - make
   host:
