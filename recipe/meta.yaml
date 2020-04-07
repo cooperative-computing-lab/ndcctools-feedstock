@@ -20,10 +20,10 @@ source:
 
 build:
   number: 0
-  skip: True  # [win]
-  skip: True  # [osx and py==27]
-  skip: True  # [osx]
-  skip: True  # [python_impl=='pypy']
+  skip: true  # [win]
+  skip: true  # [osx and py==27]
+  skip: true  # [osx]
+  skip: true  # [python_impl=='pypy']
   rpaths:
     - lib/
 
@@ -55,7 +55,7 @@ about:
   home: http://ccl.cse.nd.edu/
   license: GPL-2.0
   license_file: COPYING
-  summary: 'The Cooperative Computing Tools contains Chirp, Makeflow, JX, and Work Queue.'
+  summary: The Cooperative Computing Tools contains Chirp, Makeflow, JX, and Work Queue.
   description: |
     The Cooperative Computing Tools (cctools) are a collection of programs that
     enable large scale distributed computing on systems such as clusters,
