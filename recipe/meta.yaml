@@ -22,6 +22,7 @@ build:
   number: 0
   skip: True  # [win]
   skip: True  # [osx and py==27]
+  skip: True  # [osx]
   skip: True  # [python_impl=='pypy']
   rpaths:
     - lib/
