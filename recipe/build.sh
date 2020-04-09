@@ -15,7 +15,7 @@ else
     PERL_PATH="${PREFIX}"
 fi
 
-./configure --prefix "${PREFIX}" --with-base-dir "${PREFIX}" ${PYTHON_OPT} "${PREFIX}" --with-perl-path "${PERL_PATH}" ${DISABLED_LIB} ${DISABLED_SYS}
+./configure --debug --prefix "${PREFIX}" --with-base-dir "${PREFIX}" ${PYTHON_OPT} "${PREFIX}" --with-perl-path "${PERL_PATH}" ${DISABLED_LIB} ${DISABLED_SYS}
 
 make -j${CPU_COUNT}
 make install
