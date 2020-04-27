@@ -15,13 +15,17 @@ else
     PERL_PATH="${PREFIX}"
 fi
 
-./configure --prefix "${PREFIX}" --with-base-dir "${PREFIX}" ${PYTHON_OPT} "${PREFIX}" --with-perl-path "${PERL_PATH}" ${DISABLED_LIB} ${DISABLED_SYS}
+./configure --debug --prefix "${PREFIX}" --with-base-dir "${PREFIX}" ${PYTHON_OPT} "${PREFIX}" --with-perl-path "${PERL_PATH}" ${DISABLED_LIB} ${DISABLED_SYS}
+
+echo ==config.mk==
+cat config.mk
 
 make -j${CPU_COUNT}
 make install
 
 if ! make test
 then
+    echo ==cctools.test.fail==
     cat cctools.test.fail
     exit 1
 else
