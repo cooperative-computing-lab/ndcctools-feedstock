@@ -7,15 +7,15 @@
 # anaconda called cctools.
 
 {% set name = "ndcctools" %}
-{% set version = "7.1.11" %}
-{% set src_checksum = "6167c66a4644c9790f7a742373c0e630b5a59360e6fe432ab537f1149ee1fc6c" %}
+{% set version = "7.1.12" %}
+{% set src_checksum = "6b4b412ac02982b19ca5a1d790abe8e791c135e02b54aff73fbf82f891676d00" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: http://ccl.cse.nd.edu/software/files/cctools-{{ version }}-source.tar.gz
+  url: http://ccl.cse.nd.edu/software/files/cctools-{{ version }}c-source.tar.gz
   sha256: {{ src_checksum }}
 
 build:
