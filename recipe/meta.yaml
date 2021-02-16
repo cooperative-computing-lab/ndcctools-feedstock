@@ -7,15 +7,15 @@
 # anaconda called cctools.
 
 {% set name = "ndcctools" %}
-{% set version = "7.1.12" %}
-{% set src_checksum = "6b4b412ac02982b19ca5a1d790abe8e791c135e02b54aff73fbf82f891676d00" %}
+{% set version = "7.2.0" %}
+{% set src_checksum = "81c5632fcdd24fc0581733a96e26b221368937a764ac04f92923084eca55d51f" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: http://ccl.cse.nd.edu/software/files/cctools-{{ version }}c-source.tar.gz
+  url: http://ccl.cse.nd.edu/software/files/cctools-{{ version }}-source.tar.gz
   sha256: {{ src_checksum }}
 
 build:
@@ -35,11 +35,9 @@ requirements:
     - make
   host:
     - python
-    - perl  # [linux]
     - zlib
   run:
     - python
-    - perl  # [linux]
     - zlib
     - conda-pack
 

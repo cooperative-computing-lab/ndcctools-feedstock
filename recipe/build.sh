@@ -9,11 +9,7 @@ else
     PYTHON_OPT="--with-python2-path"
 fi
 
-if [[ "$(uname)" == "Darwin" ]]; then
-    PERL_PATH="no"
-else
-    PERL_PATH="${PREFIX}"
-fi
+PERL_PATH="no"
 
 ./configure --debug --prefix "${PREFIX}" --with-base-dir "${PREFIX}" ${PYTHON_OPT} "${PREFIX}" --with-perl-path "${PERL_PATH}" ${DISABLED_LIB} ${DISABLED_SYS}
 
