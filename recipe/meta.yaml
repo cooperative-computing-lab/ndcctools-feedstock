@@ -37,9 +37,11 @@ requirements:
   host:
     - python
     - zlib
+    - libnsl  # [not osx]
   run:
     - python
     - zlib
+    - libnsl  # [not osx]
     - conda-pack
 
 test:
