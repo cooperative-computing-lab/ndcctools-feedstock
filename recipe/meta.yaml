@@ -39,12 +39,14 @@ requirements:
     - zlib
     - libnsl  # [not osx]
     - libopenssl-static
+    - readline
     - openssl
   run:
     - python
     - zlib
     - libnsl  # [not osx]
     - openssl
+    - readline
     - conda-pack
 
 test:
